@@ -1,4 +1,4 @@
-package Algos;
+package Sort;
 
 public class BubbleSort_try {
 
