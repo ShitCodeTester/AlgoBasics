@@ -66,7 +66,8 @@ public class TestArray {
         long resultTime = en - st;
         System.out.println(resultTime);
         System.out.println(" ");
-        ourMapik.put(String.valueOf(resultTime), arr.getClass().toString());
+        ourMapik.put(String.valueOf(resultTime), arr.getClass().getName());
+
     }
 
     public static void main(String[] args) {
@@ -81,14 +82,14 @@ public class TestArray {
         testArr.printArr(arrayForSelect);
         testArr.printArr(arrayForInsert);
         System.out.println(" ");
-        testArr.timeOfWorkOfArray(testArr, arrayForBubble,ourMap);
-        testArr.timeOfWorkOfArray(testArr, arrayForSelect,ourMap);
-        testArr.timeOfWorkOfArray(testArr, arrayForInsert,ourMap);
-for(HashMap.Entry<String,String> item: ourMap.entrySet()){
+        testArr.timeOfWorkOfArray(testArr, arrayForBubble, ourMap);
+        testArr.timeOfWorkOfArray(testArr, arrayForSelect, ourMap);
+        testArr.timeOfWorkOfArray(testArr, arrayForInsert, ourMap);
+        System.out.println(" ");
 
-    System.out.println(item.getKey()+ item.getValue());
-}
+        for (HashMap.Entry<String, String> item : ourMap.entrySet()) {
+            System.out.println(item.getKey() + " ms" + " " + item.getValue());
+        }
 
     }
-
 }
