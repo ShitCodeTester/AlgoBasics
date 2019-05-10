@@ -1,9 +1,13 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestArray {
 
     void printArr(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println(" ");
     }
 
     int[] createArray() {
@@ -58,7 +62,21 @@ public class TestArray {
     public static void main(String[] args) {
         TestArray testArr = new TestArray();
         int[] arrTest = testArr.createArray();
+        int[] arrayForBubble = arrTest.clone();
+        int[] arrayForSelect = arrTest.clone();
+        int[] arrayForInsert = arrTest.clone();
         testArr.printArr(arrTest);
+        testArr.printArr(arrayForBubble);
+        testArr.printArr(arrayForSelect);
+        testArr.printArr(arrayForInsert);
+        System.out.println(" ");
+        testArr.printArr(testArr.bubbleSort(arrayForBubble));
+        System.out.println(" ");
+        testArr.printArr(testArr.bubbleSort(arrayForSelect));
+        System.out.println(" ");
+        testArr.printArr(testArr.bubbleSort(arrayForInsert));
 
+        Map<String , String> ourMap= new HashMap<String, String>();
+        
     }
 }
