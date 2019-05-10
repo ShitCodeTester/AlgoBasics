@@ -59,14 +59,14 @@ public class TestArray {
         return arr;
     }
 
-    void timeOfWorkOfArray(TestArray arg, int[] arr, Map<String, String> ourMapik) {
+    void timeOfWorkOfArray(TestArray arg, int[] arr, Map<String, String> ourMapik, String sortingName) {
         long st = System.nanoTime();
         arg.printArr(arg.bubbleSort(arr));
         long en = System.nanoTime();
         long resultTime = en - st;
         System.out.println(resultTime);
         System.out.println(" ");
-        ourMapik.put(String.valueOf(resultTime), arr.getClass().getName());
+        ourMapik.put(String.valueOf(resultTime), sortingName);
 
     }
 
@@ -82,13 +82,13 @@ public class TestArray {
         testArr.printArr(arrayForSelect);
         testArr.printArr(arrayForInsert);
         System.out.println(" ");
-        testArr.timeOfWorkOfArray(testArr, arrayForBubble, ourMap);
-        testArr.timeOfWorkOfArray(testArr, arrayForSelect, ourMap);
-        testArr.timeOfWorkOfArray(testArr, arrayForInsert, ourMap);
+        testArr.timeOfWorkOfArray(testArr, arrayForBubble, ourMap, "BubbleSort");
+        testArr.timeOfWorkOfArray(testArr, arrayForSelect, ourMap, "SelectionSort");
+        testArr.timeOfWorkOfArray(testArr, arrayForInsert, ourMap, "insertionSort");
         System.out.println(" ");
 
         for (HashMap.Entry<String, String> item : ourMap.entrySet()) {
-            System.out.println(item.getKey() + " ms" + " " + item.getValue());
+            System.out.println("The sorting is finished by" + " = " + item.getKey() + " ms" + " " + " by the " + " " + item.getValue());
         }
 
     }
