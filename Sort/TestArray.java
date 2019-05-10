@@ -59,7 +59,18 @@ public class TestArray {
         return arr;
     }
 
+    void timeOfWorkOfArray(TestArray arg, int[] arr, Map<String, String> ourMapik) {
+        long st = System.nanoTime();
+        arg.printArr(arg.bubbleSort(arr));
+        long en = System.nanoTime();
+        long resultTime = en - st;
+        System.out.println(resultTime);
+        System.out.println(" ");
+        ourMapik.put(String.valueOf(resultTime), arr.getClass().toString());
+    }
+
     public static void main(String[] args) {
+        Map<String, String> ourMap = new HashMap<>();
         TestArray testArr = new TestArray();
         int[] arrTest = testArr.createArray();
         int[] arrayForBubble = arrTest.clone();
@@ -70,13 +81,14 @@ public class TestArray {
         testArr.printArr(arrayForSelect);
         testArr.printArr(arrayForInsert);
         System.out.println(" ");
-        testArr.printArr(testArr.bubbleSort(arrayForBubble));
-        System.out.println(" ");
-        testArr.printArr(testArr.bubbleSort(arrayForSelect));
-        System.out.println(" ");
-        testArr.printArr(testArr.bubbleSort(arrayForInsert));
+        testArr.timeOfWorkOfArray(testArr, arrayForBubble,ourMap);
+        testArr.timeOfWorkOfArray(testArr, arrayForSelect,ourMap);
+        testArr.timeOfWorkOfArray(testArr, arrayForInsert,ourMap);
+for(HashMap.Entry<String,String> item: ourMap.entrySet()){
 
-        Map<String , String> ourMap= new HashMap<String, String>();
-        
+    System.out.println(item.getKey()+ item.getValue());
+}
+
     }
+
 }
