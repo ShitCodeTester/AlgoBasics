@@ -3,21 +3,16 @@ package Sort;
 public class HelperClass {
 
     int[] swapElements(int first, int second, int[] arr) {
-        if ( first >= 0 & first <= arr.length & second >= 0 & second <= arr.length & first != second){
-            int firstElement = arr[first];
-            int secondElement = arr[second];
-            arr[first] = secondElement;
-            arr[second] = firstElement;
-        }else{
-            System.out.println("Вы передали неверные индексы");
-        }
+        int firstElement = arr[first];
+        int secondElement = arr[second];
+        arr[first] = secondElement;
+        arr[second] = firstElement;
         return arr;
     }
 
     void printArray(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
-
         }
         System.out.println();
     }
