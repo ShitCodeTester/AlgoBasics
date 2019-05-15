@@ -22,7 +22,6 @@ public class HelperClass {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (int) (Math.random() * 1000);
         }
-
         HelperClass helper = new HelperClass();
         helper.printArray(arr);
         helper.swapElements(10, 19, arr);
