@@ -1,6 +1,6 @@
 package Sort;
 
-class InsertionSort {
+public class InsertionSort {
 
     int[] sorter(int[] arr) {
         int n = arr.length;
@@ -20,6 +20,7 @@ class InsertionSort {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
+        System.out.println(" ");
     }
 
     public static void main(String[] args) {
@@ -28,6 +29,7 @@ class InsertionSort {
             arrNotSorted[i] = (int) (Math.random() * 100);
         }
         InsertionSort ins = new InsertionSort();
+        ins.printSort(arrNotSorted);
         ins.sorter(arrNotSorted);
         ins.printSort(arrNotSorted);
     }
